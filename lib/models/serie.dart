@@ -6,8 +6,8 @@ class Serie {
   Serie({this.id, this.name, this.votes});
 
   factory Serie.fromMap(Map<String, dynamic> obj) => Serie(
-        id: obj['id'],
-        name: obj['name'],
-        votes: obj['votes'],
+        id: obj.containsKey('id') ? obj['id'] : 'no-id',
+        name: obj.containsKey('name') ? obj['name'] : 'no-name',
+        votes: obj.containsKey('votes') ? obj['votes'] : 'no-votes',
       );
 }
